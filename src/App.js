@@ -15,7 +15,6 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Navbar>My Market Manager</Navbar>
-
           <Switch>
             <Route exact path="/" component={Dashboard} />
             <Route path="/signin" component={SignIn} />
