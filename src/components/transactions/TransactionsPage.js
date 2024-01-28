@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getTransactionsThunkCreator } from '../../store/reducers/transactionsReducer';
+import TableHeader from '../Tables/Table-Header';
 
 function TransactionsPage ({auth, transactions, getTransactions}) {
 
@@ -28,13 +29,6 @@ function TransactionsPage ({auth, transactions, getTransactions}) {
       )
     })
   }
-
-  const renderTableHeader = () => {
-    let header = Object.keys(transactions[0])
-    return header.map((key, index) => {
-       return <th key={index}>{key.toUpperCase()}</th>
-    })
- }
     
       return (
         <div className="section">
@@ -43,11 +37,12 @@ function TransactionsPage ({auth, transactions, getTransactions}) {
               <h1 className='title'>Transactions</h1>
               <table className='transactions'>
                 <tbody>
-                  { transactions.length ?
-                    <tr>{renderTableHeader()}</tr> : 
+                  { 
+                    transactions.length ?
+                    <TableHeader headers={transactions[0]} /> : 
                     <tr>
                       <th>No Transactions yet</th>
-                      </tr>
+                    </tr>
                   }
                   {
                     transactions.length ?
