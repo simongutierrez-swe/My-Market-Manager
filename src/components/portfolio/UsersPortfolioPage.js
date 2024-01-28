@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getPortfolioThunkCreator } from '../../store/reducers/portfolioReducer';
+import TableHeader from '../Tables/Table-Header';
 
 class UsersPortfolioPage extends Component {
  
@@ -47,13 +48,6 @@ class UsersPortfolioPage extends Component {
       )
     })
   }
-
-  renderTableHeader() {
-    let header = Object.keys(this.props.usersPortfolio[0])
-    return header.map((key, index) => {
-       return <th key={index}>{key.toUpperCase()}</th>
-    })
- }
     
     render () {
         let totalValue;
@@ -68,7 +62,7 @@ class UsersPortfolioPage extends Component {
                 <tbody>
                   { 
                     this.props.usersPortfolio.length ?
-                    <tr>{this.renderTableHeader()}</tr> : 
+                    <TableHeader headers={this.props.usersPortfolio[0]} /> : 
                     <tr>
                       <th>No Stock Owned Yet</th>
                       </tr>

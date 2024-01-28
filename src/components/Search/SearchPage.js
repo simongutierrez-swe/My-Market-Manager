@@ -4,7 +4,7 @@ import { searchThunkCreator } from '../../store/reducers/searchReducer';
 import BuyStock from '../stocks/BuyStock';
 
 function SearchPage ({foundStock, searchThunk}) {
-  const [ticker, setTicker] = useState('')
+  const [ticker, setTicker] = useState('');
 
   const handleChange = (event) => {
     let newTicker = event.target.value;
