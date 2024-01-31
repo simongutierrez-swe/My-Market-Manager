@@ -24,7 +24,7 @@ function TransactionsPage ({auth, transactions, getTransactions}) {
                   }
                   {
                     transactions.length ?
-                    <TableBody stocks={transactions} /> :
+                    <TableBody body={transactions} /> :
                     <tr>
                       <td>Buy some Stock!</td>
                     </tr>
