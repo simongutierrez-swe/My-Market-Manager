@@ -7,29 +7,6 @@ import TableBody from '../Tables/Table-Body';
 function TransactionsPage ({auth, transactions, getTransactions}) {
 
   useEffect(() => getTransactions(auth.uid), [auth.uid, getTransactions]);
-
-  const renderTableData = () => {
-    return transactions.map((stock) => {
-      const { 
-        date,
-        symbol, 
-        buyPrice, 
-        shares, 
-        total, 
-        type, 
-         } = stock 
-      return (
-         <tr key={date}>
-            <td >{date}</td>
-            <td>{symbol.toUpperCase()}</td>
-            <td>${Number.parseFloat(buyPrice).toFixed(2)}</td>
-            <td>{shares}</td>
-            <td>${Number.parseFloat(total).toFixed(2)}</td>
-            <td>{type}</td>
-         </tr>
-      )
-    })
-  }
     
       return (
         <div className="section">
