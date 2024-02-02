@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+// TODO: we need spaces in titles
 const renderTableHeader = ({headers}) => {
     const titles = Object.keys(headers);
     return (
