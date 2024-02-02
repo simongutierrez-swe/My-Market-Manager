@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getPortfolioThunkCreator } from '../../store/reducers/portfolioReducer';
 import TableHeader from '../Tables/Table-Header';
+import TableBody from '../Tables/Table-Body';
 
 class UsersPortfolioPage extends Component {
  
@@ -14,39 +15,6 @@ class UsersPortfolioPage extends Component {
     this.props.usersPortfolio.forEach(elem => totalValue += elem.currentValue);
 
     return totalValue;
-  }
-
-  renderTableData() {
-
-    return this.props.usersPortfolio.map((stock, index) => {
-      const { 
-        symbol, 
-        shares, 
-        currentPrice, 
-        openingPrice,
-        currentValue, 
-         } = stock;
-
-        let performance;
-
-        if (openingPrice > currentPrice) {
-            performance = 'red-text-color';
-        } else if (openingPrice < currentPrice) {
-            performance = 'green-text-color';
-        } else {
-            performance = 'grey-text-color';
-        }
-
-      return (
-         <tr key={index}>
-            <td className = {performance}>{symbol.toUpperCase()}</td>
-            <td>{shares}</td>
-            <td className = {performance}>${Number.parseFloat(currentPrice).toFixed(2)}</td>
-            <td>${Number.parseFloat(openingPrice).toFixed(2)}</td>
-            <td>${Number.parseFloat(currentValue).toFixed(2)}</td>
-         </tr>
-      )
-    })
   }
     
     render () {
@@ -69,7 +37,7 @@ class UsersPortfolioPage extends Component {
                   }
                   {
                     this.props.usersPortfolio.length ?
-                    this.renderTableData() :
+                    <TableBody body={this.props.usersPortfolio} /> :
                     <tr>
                       <td>Buy some Stock!</td>
                     </tr>

@@ -1,35 +1,35 @@
 import React from 'react';
 
-const renderTableData = ({body}) => {
-    // change this to take in an array, map over its vals
-    // optional performance val
-    // optional array?
-    // would this result in two nested maps?
-    // how do we make this more general? 
-    // if (currElem === Number) parseFloat else .toUpperCase()
-    // if (currPrice) performance = classname and parseFloat
+const calcPerformace = (currentPrice, openingPrice) => {
+    if (openingPrice > currentPrice) {
+        return 'red-text-color';
+    } else if (openingPrice < currentPrice) {
+        return 'green-text-color';
+    }
+        
+    return 'grey-text-color';
     
-    return body.map((stock) => {
-      const { 
-        date,
-        symbol, 
-        buyPrice, 
-        shares, 
-        total, 
-        type, 
-         } = stock;
+};
 
-      return (
-         <tr key={date}>
-            <td >{date}</td>
-            <td>{symbol.toUpperCase()}</td>
-            <td>${Number.parseFloat(buyPrice).toFixed(2)}</td>
-            <td>{shares}</td>
-            <td>${Number.parseFloat(total).toFixed(2)}</td>
-            <td>{type}</td>
-         </tr>
-      )
-    })
+const renderTableData = ({body}) => {
+    // TODO: find a way to make currentPrice not hard coded
+    return body.map((elem, idx) => {
+        return (
+           <tr key={idx}>
+              {
+                Object.values(elem).map((cell, idx) => {
+                return <td key={idx} className = {cell === elem['currentPrice'] ? calcPerformace(elem.currentPrice, elem.openingPrice) : ''}>
+                            {
+                            Number(cell) ? '$' + Number.parseFloat(cell).toFixed(2)
+                            : cell.toUpperCase()
+                            }
+                        </td>
+                })
+            }
+           </tr>
+        )
+      })
+
   }
 
   export default renderTableData;
