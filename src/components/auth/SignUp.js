@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-
 import { signUpThunkCreator } from '../../store/reducers/authReducer';
 
 export function SignUp ({signUpThunk, auth}) {

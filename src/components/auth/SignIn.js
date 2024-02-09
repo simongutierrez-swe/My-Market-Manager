@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-
 import { signInThunkCreator } from '../../store/reducers/authReducer';
 
-export function SignIn ({signInThunk, auth}) {
+export function SignIn ({ signInThunk, auth }) {
   const [user, setUser] = useState({
     email: '',
     password: '',

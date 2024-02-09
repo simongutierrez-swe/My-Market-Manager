@@ -1,6 +1,7 @@
 import { getFirestore } from 'redux-firestore';
-import axios from 'axios';
 import { alphaApiToken } from '../../secrets';
+
+import axios from 'axios';
 
 // Initial State
 const initialState = [];

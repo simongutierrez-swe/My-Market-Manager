@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getPortfolioThunkCreator } from '../../store/reducers/portfolioReducer';
+
 import TableHeader from '../Tables/Table-Header';
 import TableBody from '../Tables/Table-Body';
 
-  function UsersPortfolioPage ({auth, usersPortfolio, getPortfolio}) {
+  function UsersPortfolioPage ({ auth, usersPortfolio, getPortfolio }) {
  
     useEffect(() => getPortfolio(auth.uid), [auth.uid, getPortfolio]);
   

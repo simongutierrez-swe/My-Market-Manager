@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { slide as Menu } from 'react-burger-menu';
-
 import { burgerStyles } from '../../styles';
 
 class SignedOutLinksBurger extends Component {

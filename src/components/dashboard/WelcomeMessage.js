@@ -1,6 +1,6 @@
 import React from 'react';
 
-const WelcomeMessage = ({profile}) => {
+const WelcomeMessage = ({ profile }) => {
   const {firstName, balance} = profile;
   
   return (

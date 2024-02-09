@@ -3,7 +3,7 @@ import { clearSearchThunkCreator } from '../../store/reducers/searchReducer';
 import { buyStockThunkCreator } from '../../store/reducers/stockReducer';
 import { connect } from 'react-redux';
 
-function BuyStock ({auth, profile, clearSearch, buyStock, searchResults}) {
+function BuyStock ({ auth, profile, clearSearch, buyStock, searchResults }) {
     const [amount, setAmount] = useState(1);
 
     const handleChange = (event) => {

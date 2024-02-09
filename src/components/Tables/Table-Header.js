@@ -1,7 +1,7 @@
 import React from 'react';
 
-// TODO: we need spaces in titles
-const renderTableHeader = ({headers}) => {
+// TODO: we need spaces in titles create a mapping for titles => {'buyprice': 'Buy Price'}
+const renderTableHeader = ({ headers }) => {
     const titles = Object.keys(headers);
     return (
         <tr>

@@ -11,7 +11,7 @@ const calcPerformace = (currentPrice, openingPrice) => {
     
 };
 
-const renderTableData = ({body}) => {
+const renderTableData = ({ body }) => {
     // TODO: find a way to make currentPrice not hard coded
     return body.map((elem, idx) => {
         return (
