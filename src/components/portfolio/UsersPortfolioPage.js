@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { getPortfolioThunkCreator } from '../../store/reducers/portfolioReducer';
 
+import { getPortfolioThunkCreator } from '../../store/reducers/portfolioReducer';
 import TableHeader from '../Tables/Table-Header';
 import TableBody from '../Tables/Table-Body';
 

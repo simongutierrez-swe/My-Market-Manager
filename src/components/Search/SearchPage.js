@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { searchThunkCreator } from '../../store/reducers/searchReducer';
 
+import { searchThunkCreator } from '../../store/reducers/searchReducer';
 import BuyStock from '../stocks/BuyStock';
 
 function SearchPage ({ foundStock, searchThunk }) {

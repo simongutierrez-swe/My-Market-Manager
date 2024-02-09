@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { slide as Menu } from 'react-burger-menu';
+
 import { signOutThunkCreator } from '../../store/reducers/authReducer';
 import { burgerStyles } from '../../styles';
 

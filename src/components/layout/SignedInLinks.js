@@ -1,8 +1,9 @@
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
+
 import { signOutThunkCreator } from '../../store/reducers/authReducer';
 
-import React from 'react';
 
 const SignedInLinks = ({ profile, signOutThunk }) => {
   return (
