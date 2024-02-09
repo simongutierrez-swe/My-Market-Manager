@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import { signOutThunkCreator } from '../../store/reducers/authReducer';
 
+
 const SignedInLinks = ({ profile, signOutThunk }) => {
   return (
     <ul className="right">

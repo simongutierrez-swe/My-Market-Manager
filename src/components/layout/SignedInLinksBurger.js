@@ -6,7 +6,7 @@ import { slide as Menu } from 'react-burger-menu';
 import { signOutThunkCreator } from '../../store/reducers/authReducer';
 import { burgerStyles } from '../../styles';
 
-function SignedInLinksBurger ({signOutThunk}) {
+function SignedInLinksBurger ({ signOutThunk }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleStateChange = (state) => {

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { signInThunkCreator } from '../../store/reducers/authReducer';
 
-export function SignIn ({signInThunk, auth}) {
+export function SignIn ({ signInThunk, auth }) {
   const [user, setUser] = useState({
     email: '',
     password: '',

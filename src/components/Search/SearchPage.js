@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+
 import { searchThunkCreator } from '../../store/reducers/searchReducer';
 import BuyStock from '../stocks/BuyStock';
 
-function SearchPage ({foundStock, searchThunk}) {
+function SearchPage ({ foundStock, searchThunk }) {
   const [ticker, setTicker] = useState('');
 
   const handleChange = (event) => {
