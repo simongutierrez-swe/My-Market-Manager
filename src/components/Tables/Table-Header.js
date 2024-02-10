@@ -1,13 +1,14 @@
 import React from 'react';
 
-// TODO: we need spaces in titles create a mapping for titles => {'buyprice': 'Buy Price'}
+import { titleNames } from '../../utils/constants';
+
 const renderTableHeader = ({ headers }) => {
     const titles = Object.keys(headers);
     return (
         <tr>
             {
             titles.map((title) => {
-                return <th key={title}>{title.toUpperCase()}</th>
+                return <th key={title}>{titleNames[title.toUpperCase()]}</th>
                 })
             }
         </tr>
